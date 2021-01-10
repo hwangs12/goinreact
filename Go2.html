@@ -134,17 +134,17 @@
         };
 
         for (let i = 0; i<361; i++){
-                let StoneAppearVar = document.getElementById(StoneIDArray[i])
-                StoneAppearVar.addEventListener("mouseover",function(StoneAppear){
-                StoneAppear.target.style.opacity = "0.3";
-                });
-                StoneAppearVar.addEventListener("mouseout",function(StoneEmpty){
-                StoneEmpty.target.style.opacity = "0";
-                });
-                StoneAppearVar.addEventListener("click",function(StoneClicked){
-                StoneClicked.target.style.opacity = "1";
-                StoneColour[i] = 1;
-                });
+            let StoneAppearVar = document.getElementById(StoneIDArray[i])
+            StoneAppearVar.addEventListener("mouseover",function(StoneAppear){
+            StoneAppear.target.style.opacity = "0.3";
+            });
+            StoneAppearVar.addEventListener("mouseout",function(StoneEmpty){
+            StoneEmpty.target.style.opacity = "0";
+            });
+            StoneAppearVar.addEventListener("click",function(StoneClicked){
+            StoneClicked.target.style.opacity = "1";
+            StoneColour[i] = 1;
+            });
         };
    
     </script>

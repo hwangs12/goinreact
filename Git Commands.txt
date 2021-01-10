@@ -8,5 +8,5 @@ cd ""
 
 git branch -M main
 
-
+pwd
 git pull
