@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Go Game
-    </title>
-
+    <meta charset="utf-8"/>
+    <title>Go Game</title>
     <style>
-
         .grid-outer {
             border : 5px solid black;
             display: grid;
-            background-image:linear-gradient(to bottom right, rgba(153, 74, 0, 0.836), rgba(34, 19, 0, 0.89));
+            background-image: linear-gradient(to bottom right, rgba(153, 74, 0, 0.836), rgba(34, 19, 0, 0.89));
             position: relative;
             width: 590px;
-            height:590px;
+            height: 590px;
             padding: 0px;
-            
-
         }
+
         .grid-container {
             display: grid;
             border: 3px solid black;
@@ -26,7 +23,6 @@
             width: 474px;
             position:absolute;
             transform:translate(calc(10% + 5px),calc(10% + 5px));
-          
         }
       
         .grid-item {
@@ -36,15 +32,17 @@
             width: calc(26.33px - 3px);
             height: calc(26.33px - 3px);
         }
-        .grid-Stone-container {
-            display:grid;
+
+        .grid-stone-container {
+            display: grid;
             height: 498px;
             width: 498px;
             position: absolute;
             transform: translate(42px, 42px);
             grid-template-columns: repeat(19, 26.42px);
         }
-        .Stone {
+
+        .stone {
             position:relative;
             height: 24px;
             width: 24px;
@@ -55,142 +53,95 @@
         }
     </style>
 </head>
-
-
 <body> 
-    <div class = "grid-outer">
-        <div class="grid-container">
-            <div id =TotalGrid0></div>
-            <div id =TotalGrid1></div>
-            <div id =TotalGrid2></div>
-            <div id =TotalGrid3></div>
-            <div id =TotalGrid4></div>
-            <div id =TotalGrid5></div>
-            <div id =TotalGrid6></div>
-            <div id =TotalGrid7></div>
-            <div id =TotalGrid8></div>
-            <div id =TotalGrid9></div>
-            <div id =TotalGrid10></div>
-            <div id =TotalGrid11></div>
-            <div id =TotalGrid12></div>
-            <div id =TotalGrid13></div>
-            <div id =TotalGrid14></div>
-            <div id =TotalGrid15></div>
-            <div id =TotalGrid16></div>
-            <div id =TotalGrid17></div>
-        </div>
-        <div class = "grid-Stone-container">
-            <div id = StoneGroup0></div>
-            <div id = StoneGroup1></div>
-            <div id = StoneGroup2></div>
-            <div id = StoneGroup3></div>
-            <div id = StoneGroup4></div>
-            <div id = StoneGroup5></div>
-            <div id = StoneGroup6></div>
-            <div id = StoneGroup7></div>
-            <div id = StoneGroup8></div>
-            <div id = StoneGroup9></div>
-            <div id = StoneGroup10></div>
-            <div id = StoneGroup11></div>
-            <div id = StoneGroup12></div>
-            <div id = StoneGroup13></div>
-            <div id = StoneGroup14></div>
-            <div id = StoneGroup15></div>
-            <div id = StoneGroup16></div>
-            <div id = StoneGroup17></div>
-            <div id = StoneGroup18></div>
-        </div>
+    <div class="grid-outer">
+        <div class="grid-container"></div>
+        <div class="grid-stone-container"></div>
     </div>
-  
-    <script>
-        
-
-        let StoneIDArray = [];
-        let StoneDivArrayString = [];
-        for (let j = 0; j<361; j++){
-            StoneIDArray.push('StoneID');
-            StoneIDArray[j] += String(j);
-            StoneDivArrayString.push('<div class="Stone" id = "');
-            StoneDivArrayString[j] += StoneIDArray[j];
-            StoneDivArrayString[j] += String('"></div>');
-        };
-        let StoneDivArray = [];
-        let StoneGroupIDArray = [];
-        for (let i = 0; i <19; i++){
-            StoneGroupIDArray.push('StoneGroup');
-            StoneGroupIDArray[i] += String(i)
-        };
-
-        for (let j =0; j <19; j++){
-            for (let i = 0; i<19; i++){
-            StoneDivArray[j] = document.getElementById(StoneGroupIDArray[j]);
-            StoneDivArray[j].innerHTML += StoneDivArrayString[(i+(j*19))];
-            };
-        };
-
-        let StoneColourArray = [];
-        let StoneChangeVar;
-        let StoneColourVarArray = [];
-        for (let i =0; i<361; i++){
-            StoneColourArray.push(0);
-            StoneColourVarArray.push(0);
-        };
-
-
-        
-        
-        for(i = 0; i <361; i++){
-                    StoneChangeVar = document.getElementById(StoneIDArray[i]);
-            if(StoneColourArray[i] == 0){
-                    StoneChangeVar.addEventListener("mouseover",function(StoneAppear){
-                    StoneAppear.target.style.opacity = "0.3";
-                    });
-                    StoneChangeVar.addEventListener("mouseout",function(StoneEmpty){
-                    StoneEmpty.target.style.opacity = "0";
-                    });
-                    StoneChangeVar.addEventListener("click",function ChangeStone(StoneClicked){
-                    StoneClicked.target.style.opacity = "1";
-                    StoneColourArray[i] = 1;
-                    console.log(StoneColourArray[i])
-                    });
-                }   else if(StoneColourArray[i] == 1) {
-                    StoneChangeVar.addEventListener("mouseout",function(StoneBlack){
-                    StoneBlack.target.style.opacity = "1";
-                    });
-                };
-            };
-
-
-    </script>
 
     <script>
-        let row = []
-        let column = []
-        let position
-        for (let i=1; i<20; i++){
-            position = i*22
-            row.push(position)
-            column.push(position)
+        let stoneIDArray = [];
+        let stoneDivArrayString = [];
+        for (let i = 0; i < 361; i++) {
+            const stoneId = `stone-${i}`;
+            stoneIDArray.push(stoneId);
+            stoneDivArrayString.push(`<div class="stone" id="${stoneId}"></div>`);
         };
 
-        let TotalGridId = [];
-        let TotalGridVar = [];
+        let stoneDivArray = [];
+        let stoneGroupIDArray = [];
+        const gridStoneContainer = document.getElementsByClassName("grid-stone-container")[0];
+        for (let i = 0; i < 19; i++) {
+            const stoneGroupId = `stoneGroup${i}`;
+            stoneGroupIDArray.push(stoneGroupId);
 
-        for (i=0; i < 18; i++){
-            TotalGridId.push('TotalGrid');
-            TotalGridId[i] += String(i);
-            TotalGridVar.push(i)
+            const stoneGroupElement = document.createElement("div");
+            stoneGroupElement.id = stoneGroupId;
+            gridStoneContainer.appendChild(stoneGroupElement);
         };
-        
-        for (let j =0; j <18; j++){
-            for (let i = 0; i<18; i++){
-            TotalGridVar[j] = document.getElementById(TotalGridId[j]);
-            TotalGridVar[j].innerHTML +='<div class="grid-item"></div>';
+
+        for (let i = 0; i < 19; i++) {
+            for (let j = 0; j < 19; j++) {
+                stoneDivArray[i] = document.getElementById(stoneGroupIDArray[i]);
+                stoneDivArray[i].innerHTML += stoneDivArrayString[(j + (i * 19))];
             };
         };
 
-    </script>
+        let stoneColourArray = [];
+        for (let i = 0; i < 361; i++){
+            stoneColourArray.push(0);
+        };
 
+        for (let i = 0; i < 361; i++){
+            const stoneElement = document.getElementById(stoneIDArray[i]);
+            stoneElement.addEventListener("mouseover", function(stone) {
+                if (stoneColourArray[i] < 1) {
+                    stone.target.style.opacity = "0.3";
+                }
+            });
+            stoneElement.addEventListener("mouseout", function(stone) {
+                if (stoneColourArray[i] < 1) {
+                    stone.target.style.opacity = "0";
+                }
+            });
+            stoneElement.addEventListener("click", function(stone) {
+                if (stoneColourArray[i] < 1) {
+                    stone.target.style.opacity = "1";
+                    stoneColourArray[i] = 1;
+                }
+            });
+        }
+    </script>
+    <script>
+        let row = [];
+        let column = [];
+        let position;
+        for (let i = 1; i < 20; i++){
+            position = i * 22;
+            row.push(position);
+            column.push(position);
+        }
+
+        let totalGridId = [];
+        let totalGridVar = [];
+
+        const gridContainer = document.getElementsByClassName("grid-container")[0];
+        for (let i = 0; i < 18; i++) {
+            const gridId = `totalGrid${i}`;
+            totalGridId.push(gridId);
+            totalGridVar.push(i);
+
+            const gridColumn = document.createElement("div");
+            gridColumn.id = gridId;
+            gridContainer.appendChild(gridColumn);
+        }
+        
+        for (let i = 0; i < 18; i++) {
+            for (let j = 0; j < 18; j++) {
+                totalGridVar[i] = document.getElementById(totalGridId[i]);
+                totalGridVar[i].innerHTML += "<div class='grid-item'></div>";
+            };
+        }
+    </script>
 </body>
-
 </html>
