@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Go Game
+    </title>
+
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+            background-image: linear-gradient(to bottom right, rgb(80, 59, 0), rgba(78, 44, 0, 0.575));
+          padding: 2.5%;
+          max-width: 95%;
+          max-height: 95%;
+        }
+
+        .grid-item {
+          border: 1.5px solid rgba(0, 0, 0, 0.8);
+          font-size: px;
+        }
+    </style>
+</head>
+
+
+<body> 
+
+<div class="grid-container">
+    <div id ="TotalGrid"></div>
+</div>
+
+
+  
+    <script>
+        let row = []
+        let column = []
+        let position
+        for (let i=1; i<20; i++){
+            position = i*80
+            row.push(position)
+            column.push(position)
+        };
+
+        let TotalGrids = document.getElementById("TotalGrid");
+        for (i = 1; i<362; i++){
+            TotalGrids.innerHTML +='<div class="grid-item"> </div>';
+
+        }
+
+    </script>
+
+</body>
+
+</html>

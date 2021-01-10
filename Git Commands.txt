@@ -1,0 +1,12 @@
+git add .
+git config --global user.email "XX.com"
+git config --global user.name "XX"
+git commit -m "XX"
+git status
+git push
+cd ""
+
+git branch -M main
+
+
+git pull
