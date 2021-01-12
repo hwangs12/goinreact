@@ -1,0 +1,47 @@
+.grid-outer {
+    border : 5px solid black;
+    display: grid;
+    background-image: linear-gradient(to bottom right, rgba(153, 74, 0, 0.836), rgba(34, 19, 0, 0.89));
+    position: relative;
+    width: 590px;
+    height: 590px;
+    padding: 0px;
+}
+
+.grid-container {
+    display: grid;
+    border: 3px solid black;
+    grid-template-columns: repeat(18, auto);
+    background-image: linear-gradient(to bottom right, rgba(153, 74, 0, 0.836), rgba(34, 19, 0, 0.89));
+    height: 474px;
+    width: 474px;
+    position: absolute;
+    transform: translate(calc(10% + 5px),calc(10% + 5px));
+}
+
+.grid-item {
+    position: relative;
+    border: 1.5px solid rgba(0, 0, 0, 0.8);
+    margin: 0px;
+    width: calc(26.33px - 3px);
+    height: calc(26.33px - 3px);
+}
+
+.grid-stone-container {
+    display: grid;
+    height: 498px;
+    width: 498px;
+    position: absolute;
+    transform: translate(42px, 42px);
+    grid-template-columns: repeat(19, 26.42px);
+}
+
+.stone {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    padding-bottom: 2.42px;
+    background-image: radial-gradient(rgb(85, 85, 85),black);
+    border-radius: 50%;
+    opacity: 0;
+}

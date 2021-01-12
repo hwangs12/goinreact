@@ -1,113 +1,17 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-
-    <style>
-        .center-fit {
-            position: absolute;
-            width:95%;
-            margin:auto;
-            z-index: -1;
-        }
-        .Stone {
-            position: absolute;
-            display: block;
-            transform: translate(ii, StonePosition);
-            width: 5%;
-            height: auto;
-            z-index: 0;
-        }
-        .ButtonPosition {
-            position: absolute;
-            transform: translate()
-        }
-    </style>
-
+    <meta charset="utf-8"/>
+    <title>Go Game</title>
+    <link rel="stylesheet" href="index.css"/>
 </head>
-
 <body> 
-
-    <script>
-        const BlackStone = document.createElement('img')
-        BlackStone.src = 'images/Black.png'
-        document.querySelector('.centerf')
-        let Intersections = document.getElementById("Intersections");
-        Intersections.addEventListener("mouseover",function(event){
-            event.target.style.color = "orange";
-        setTimeout(function() {
-            event.target.style.color = "";
-        }, 500);
-    }, false);
-
-    document.getElementById("Position").disabled = true;
-        var counter = 0;
-        var x = document.getElementById("Division");
-        var y = document.createElement("Image");
-        var y1 = document.createElement("Image");
-        var y2 = document.createElement("Image");
-        var xy= document.createElement("Image");
-    function PlaceStone(){
-            document.getElementById("Position").disabled = false;
-            counter++;
-            if (counter % 2 == 0){
-                if(y %% xy %% x) {
-                    y.style.display = 'none';
-                    xy.style.display = 'inline';
-                    xy.setAttribute("src", "/images/Black.png");
-                    xy.setAttribute("width", "5%");
-                    xy.setAttribute("height", "5%");
-                    xy.setAttribute("style", "margin:a b c d");
-                    document.body.appendChild(xy);
-                }
-            } else {
-                xy.style.display = 'none';
-                y.setAttribute("src", "/images/BlackOpaque.png");
-                y.setAttribute("width", "5%");
-                y.setAttribute("height", "5%");
-                y.setAttribute("style", "margin:a b c d");
-                document.body.appendChild(y);
-            }
-      
-        }    
-
-        var ii
-        let StonePosition = document.getElementById("StonePosition")
-            function StonePosition(){
-                for (ii = 0; ii <20; ii++){
-                    StonePosition = ii*90
-                }
-            }
-
-    </script>
-<button id = "Position" onclick="PlaceStone()"> Click </button>
-<img src = "/images/Black.png" onclick="PlaceStone()" />
-<div id = "Division">
+    <div class="grid-outer">
+        <div class="grid-container"></div>
+        <div class="grid-stone-container"></div>
     </div>
 
-<button onclick="document.getElementById('Stone').src ='/images/Black.png'"> BlackStone</button>
-<button onclick="document.getElementById('Stone').src ='/images/White.png'"> WhiteStone </button>
-<img id="Stone" src = "images/Black.jpg" style id = "StoneSizing">
-
-
-    <div class = "GoImages">
-        <img class = "center-fit" src="/images/grid.jpg">
-        <img class = "Stone" src = "/images/Black.png" >
-    </div>
-
-    <style>
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 50px;
-}
-
-    </style>
-
-<script src = index.js>
-
-</script>
-   
-
+    <script src="createGridContainer.js"></script>
+    <script src="createStoneElements.js"></script>
 </body>
 </html>
