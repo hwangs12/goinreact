@@ -47,7 +47,7 @@
             height: 24px;
             width: 24px;
             padding-bottom: 2.42px;
-            background-image: radial-gradient(rgb(85, 85, 85),black);
+            background-image: radial-gradient(rgb(185, 185, 185),rgb(255, 255, 255));
             border-radius: 50%;
             opacity: 0;
         }
@@ -80,6 +80,7 @@
             gridStoneContainer.appendChild(stoneGroupElement);
         };
 
+
         for (let i = 0; i < 19; i++) {
             for (let j = 0; j < 19; j++) {
                 stoneDivArray[i] = document.getElementById(stoneGroupIDArray[i]);
@@ -92,25 +93,42 @@
             stoneColourArray.push(0);
         };
 
+        let whoseTurn = 2; //1 = Black 2 = White
         for (let i = 0; i < 361; i++){
             const stoneElement = document.getElementById(stoneIDArray[i]);
             stoneElement.addEventListener("mouseover", function(stone) {
-                if (stoneColourArray[i] < 1) {
+                if (stoneColourArray[i] < 1 && whoseTurn == 1) {
                     stone.target.style.opacity = "0.3";
-                }
+                    stone.target.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
+                } else if (stoneColourArray[i] < 1 && whoseTurn == 2) {
+                    stone.target.style.opacity = "0.3";
+                    stone.target.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),rgb(255, 255, 255))";
+                } 
             });
+
             stoneElement.addEventListener("mouseout", function(stone) {
                 if (stoneColourArray[i] < 1) {
                     stone.target.style.opacity = "0";
                 }
             });
+
             stoneElement.addEventListener("click", function(stone) {
                 if (stoneColourArray[i] < 1) {
                     stone.target.style.opacity = "1";
-                    stoneColourArray[i] = 1;
-                }
+                    if (whoseTurn == 1){
+                        stoneColourArray[i] = 1;
+                        whoseTurn = 2;
+                        stone.target.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
+                    } else if (whoseTurn == 2){
+                        stoneColourArray[i] = 2;
+                        whoseTurn = 1;
+                        stone.target.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),rgb(255, 255, 255))";
+                    };
+                };
             });
-        }
+        };
+
+
     </script>
     <script>
         let row = [];
