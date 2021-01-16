@@ -10,3 +10,5 @@ git branch -M main
 
 pwd
 git pull
+
+git branch -b XX
