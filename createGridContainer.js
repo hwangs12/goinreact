@@ -1,5 +1,6 @@
 (() => {
 
+    
     let totalGridId = [];
     let totalGridVar = [];
     
