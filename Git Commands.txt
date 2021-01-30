@@ -26,13 +26,13 @@ PULL
 git pull
 
 TO PUSH
-git checkout -b XX
+git checkout -b "XX"
 git add .
 git push -u origin "XX"
 
 DELETE BRANCH
 git branch -d XX \\local branch deletion
-git push origin --delete XX
+git push origin --delete "XX"
 
 CHECKING BRANCHES
 git branch -l
