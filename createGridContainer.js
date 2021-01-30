@@ -1,4 +1,5 @@
 (() => {
+<<<<<<< HEAD
     let row = [];
     let column = [];
     let position;
@@ -8,6 +9,9 @@
         column.push(position);
     }
     
+=======
+
+>>>>>>> 0118Capture
     let totalGridId = [];
     let totalGridVar = [];
     

@@ -29,18 +29,33 @@
 
 .grid-stone-container {
     display: grid;
+<<<<<<< HEAD
     height: 498px;
     width: 498px;
     position: absolute;
     transform: translate(42px, 42px);
     grid-template-columns: repeat(19, 26.42px);
+=======
+    height: 502.65px;
+    width: 502.65px;
+    position: absolute;
+    transform: translate(43.69px, 43.69px);
+    grid-template-columns: repeat(19, 26.45px);
+    grid-template-rows: repeat(19, 26.45px);
+>>>>>>> 0118Capture
 }
 
 .stone {
     position: relative;
+<<<<<<< HEAD
     height: 24px;
     width: 24px;
     padding-bottom: 2.42px;
+=======
+    height: 23px;
+    width: 23px;
+    margin-bottom: 3.45px;
+>>>>>>> 0118Capture
     background-image: radial-gradient(rgb(85, 85, 85),black);
     border-radius: 50%;
     opacity: 0;

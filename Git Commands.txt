@@ -1,12 +1,33 @@
-git add .
+CONFIGURATION
 git config --global user.email "XX.com"
 git config --global user.name "XX"
-git commit -m "XX"
+
+REPOSITORY
+git remote -v (view all)
+git remote set-url origin "https://github.com/brandonis93/Go-Project.git"
+git clone XX
+
+CHEKCING CHANGES
 git status
 git push
 cd ""
 
 git branch -M main
 
-pwd
+pwd (current folder)
+cd "XX" (change folder)
+
+PULL
 git pull
+
+TO PUSH
+git checkout -b XX
+git add .
+git push -u origin XX
+
+DELETE BRANCH
+git branch -d XX \\local branch deletion
+git push origin --delete XX
+
+CHECKING BRANCHES
+git branch -l
