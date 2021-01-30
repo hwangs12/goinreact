@@ -1,17 +1,4 @@
 (() => {
-<<<<<<< HEAD
-    let row = [];
-    let column = [];
-    let position;
-    for (let i = 1; i < 20; i++){
-        position = i * 22;
-        row.push(position);
-        column.push(position);
-    }
-    
-=======
-
->>>>>>> 0118Capture
     let totalGridId = [];
     let totalGridVar = [];
     

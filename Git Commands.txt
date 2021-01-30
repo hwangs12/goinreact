@@ -4,7 +4,7 @@ git config --global user.name "XX"
 
 REPOSITORY
 git remote -v (view all)
-git remote set-url origin "https://github.com/brandonis93/Go-Project.git"
+git remote add XX "https://github.com/brandonis93/Go-Project.git"
 git clone XX
 
 CHEKCING CHANGES
@@ -13,9 +13,14 @@ git push
 cd ""
 
 git branch -M main
-
+git branch --set-upstream-to=origin/XX(Global) XX(Brandh)
 pwd (current folder)
 cd "XX" (change folder)
+
+MERGING
+git checkout main
+git merge XX
+git commit 
 
 PULL
 git pull
