@@ -4,7 +4,8 @@ git config --global user.name "XX"
 
 REPOSITORY
 git remote -v (view all)
-git remote set-url origin https://github.com/brandonis93.git
+git remote set-url origin "https://github.com/brandonis93/Go-Project.git"
+git clone XX
 
 CHEKCING CHANGES
 git status
