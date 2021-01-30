@@ -29,12 +29,12 @@
 
 .grid-stone-container {
     display: grid;
-    height: 555.52px;
-    width: 555.52px;
+    height: 502.65px;
+    width: 502.65px;
     position: absolute;
-    transform: translate(17.24px, 17.24px);
-    grid-template-columns: repeat(21, 26.45px);
-    grid-template-rows: repeat(21, 26.45px);
+    transform: translate(43.69px, 43.69px);
+    grid-template-columns: repeat(19, 26.45px);
+    grid-template-rows: repeat(19, 26.45px);
 }
 
 .stone {

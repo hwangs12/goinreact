@@ -1,123 +1,155 @@
 (() => {
     let board = 
-    [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+    [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 
+    const NEITHER = 0;
+    const BLACK = 1;
+    const WHITE = 2;
+    let whoseTurn = BLACK;
 
     let stoneDivString = [];
-    for (let i = 0; i < 21; i++) {
-        for (let j = 0; j < 21; j++) {
+    for (let i = 0; i < 19; i++) {
+        for (let j = 0; j < 19; j++) {
             stoneDivString.push(`<div class="stone" id="board${[i]},${[j]}"></div>`)
         };
     };
 
     let gridStoneContainer = document.getElementsByClassName("grid-stone-container")[0];
     let stoneDiv = [];
-    for (let i = 0; i < 21; i++) {
+    for (let i = 0; i < 19; i++) {
         const stoneGroupElement = document.createElement("div");
-        stoneGroupElement.id = `boardRow${(i)}`;
+        stoneGroupElement.id = `boardCol${(i)}`;
         gridStoneContainer.appendChild(stoneGroupElement);
-        for (let j = 0; j < 21; j++) {
-            stoneDiv[i] = document.getElementById(`boardRow${(i)}`);
-            stoneDiv[i].innerHTML += stoneDivString[j + (i * 21)];
+        for (let j = 0; j < 19; j++) {
+            stoneDiv[i] = document.getElementById(`boardCol${(i)}`);
+            stoneDiv[i].innerHTML += stoneDivString[j + (i * 19)];
         };
     };
+   
 
-    let whoseTurn = 1;
-    const NEITHER = 0;
-    const BLACK = 1;
-    const WHITE = 2;
-    const EITHER = 3;
-
-    let stoneSurrounded = new Array(21).fill(new Array (21).fill(0));
-    for (let i = 0; i <21; i++){
-        stoneSurrounded[i][0] = EITHER;
-        stoneSurrounded[i][20] = EITHER;
-        stoneSurrounded[0][i] = EITHER;
-        stoneSurrounded[20][i] = EITHER;
-    }
-    
-    for (let i = 1; i < 20; i++){
-        for (let j = 1; j < 20; j++) {
-            if(board[i+1][j] == NEITHER || board[i-1][j] == NEITHER || board[i][j+1] == NEITHER || board[i][j-1] == NEITHER){
-                stoneSurrounded[i][j] = NEITHER;
-            };
-            if(board[i+1][j] == (BLACK || EITHER) && board[i-1][j] == (BLACK || EITHER) && board[i][j+1] == (BLACK || EITHER) && board[i][j-1] == (BLACK || EITHER)){
-                stoneSurrounded[i][j] = BLACK;
-            };
-            if(board[i+1][j] == (WHITE || EITHER) && board[i-1][j] == (WHITE || EITHER) && board[i][j+1] == (WHITE || EITHER) && board[i][j-1] == (WHITE || EITHER)){
-                stoneSurrounded[i][j] = WHITE;
+    function refreshUI() {
+        for (let i = 0; i < 19; i++) {
+            for (let j = 0; j <19; j++) {
+                const stoneElement = document.getElementById(`board${[i]},${[j]}`);
+                if (board[i][j] == NEITHER) {
+                    stoneElement.style.opacity = "0";
+                    stoneElement.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
+                };
+                if (board[i][j] == BLACK) {
+                    stoneElement.style.opacity = "1";
+                    stoneElement.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
+                };
+                if (board[i][j] == WHITE) {
+                    stoneElement.style.opacity = "1";
+                    stoneElement.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
+                };
             };
         };
     };
 
-    for (let i = 1; i < 20; i++){
-        for (let j = 1; j < 20; j++) {
-            const stoneElement = document.getElementById(`board${[i]},${[j]}`);
-            stoneElement.addEventListener("mouseover",function(stone) {
-            if (board[i][j] == NEITHER && whoseTurn == BLACK) {
-                stone.target.style.opacity = "0.3";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
-            };
-            if (board[i][j] == NEITHER && whoseTurn == WHITE) {
-                stone.target.style.opacity = "0.3";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
-            };
-            if (board[i][j] == BLACK) {
-                stone.target.style.opacity = "1";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
-            };
-            if (board[i][j] == WHITE) {
-                stone.target.style.opacity = "1";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
-            };
-            });
+    function mouseOver(i,j) {
+        const stoneElement = document.getElementById(`board${[i]},${[j]}`);
+        stoneElement.addEventListener("mouseover", function(stone) {
+        if (board[i][j] == NEITHER && whoseTurn == BLACK) {
+            stoneElement.style.opacity = "0.3";
+            stoneElement.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
+        };
+        if (board[i][j] == NEITHER && whoseTurn == WHITE) {
+            stoneElement.style.opacity = "0.3";
+            stoneElement.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
+        };
+    });
+    };
 
-            stoneElement.addEventListener("mouseout",function(stone) {
-            if (board[i][j] == NEITHER && whoseTurn == BLACK) {
-                stone.target.style.opacity = "0";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
+    function mouseOut(i,j) {
+        const stoneElement = document.getElementById(`board${[i]},${[j]}`);
+        stoneElement.addEventListener("mouseout", function(stone) {
+            if (board[i][j] == NEITHER) {
+                stoneElement.style.opacity = "0";
             };
-            if (board[i][j] == NEITHER && whoseTurn == WHITE) {
-                stone.target.style.opacity = "0";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
-            };
-            });
+        });
+    };
 
-            stoneElement.addEventListener("click",function(stone) {
+    function click(i,j){
+        const stoneElement = document.getElementById(`board${[i]},${[j]}`);
+        stoneElement.addEventListener("click",function() {
             if (board[i][j] == NEITHER && whoseTurn == BLACK) {
-                stone.target.style.opacity = "1";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
+                stoneElement.style.opacity = "1";
+                stoneElement.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
                 whoseTurn = WHITE;
                 board[i][j] = BLACK;
-            };
+                captureSurroundedStone(i,j)
+                refreshUI()
+                };
             if (board[i][j] == NEITHER && whoseTurn == WHITE) {
-                stone.target.style.opacity = "1";
-                stone.target.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
+                stoneElement.style.opacity = "1";
+                stoneElement.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
                 whoseTurn = BLACK;
                 board[i][j] = WHITE;
+                captureSurroundedStone(i,j)
+                refreshUI()
             };
-            });
-        }
+        });
     };
+
+    function stoneSurround(y,x) {
+        const stoneType = board[y][x]
+        if (stoneType == NEITHER) {
+            return false;
+        };
+        if (stoneType == BLACK) {
+            if (board?.[y+1]?.[x] !== (BLACK && NEITHER) && board?.[y-1]?.[x] !== (BLACK && NEITHER) && board?.[y]?.[x+1] !== (BLACK && NEITHER) && board?.[y]?.[x-1] !== (BLACK && NEITHER)) {
+                return true;
+            };
+        };
+        if (stoneType == WHITE) {
+            if (board?.[y+1]?.[x] !== (WHITE && NEITHER) && board?.[y-1]?.[x] !== (WHITE && NEITHER) && board?.[y]?.[x+1] !== (WHITE && NEITHER) && board?.[y]?.[x-1] !== (WHITE && NEITHER)) {
+                return true;
+            };
+        };
+    };
+
+    function captureSurroundedStone(i,j) {
+        if (stoneSurround(i+1,j)) {
+            board[i+1][j] = NEITHER; 
+        }
+        if (stoneSurround(i-1,j)) {
+            board[i-1][j] = NEITHER;         
+        }
+        if (stoneSurround(i,j+1)) {
+            board[i][j+1] = NEITHER;    
+        }
+        if (stoneSurround(i,j-1)) {
+            board[i][j-1] = NEITHER;   
+        }
+    }
+
+    for (let i = 0; i < 19; i++){
+        for (let j = 0; j < 19; j++) {
+            click(i,j)
+            mouseOver(i,j)
+            mouseOut(i,j)
+        };
+    };
+
+
 
 })();
