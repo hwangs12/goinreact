@@ -1,4 +1,9 @@
 (() => {
+<<<<<<< HEAD
+
+    
+=======
+>>>>>>> main
     let totalGridId = [];
     let totalGridVar = [];
     
