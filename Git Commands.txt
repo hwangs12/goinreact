@@ -20,19 +20,19 @@ cd "XX" (change folder)
 MERGING
 git checkout main
 git merge XX
-git commit 
+git commit -m "XX"
 
 PULL
 git pull
 
 TO PUSH
-git checkout -b XX
+git checkout -b "XX"
 git add .
-git push -u origin XX
+git push -u origin XX(branch name)
 
 DELETE BRANCH
 git branch -d XX \\local branch deletion
-git push origin --delete XX
+git push origin --delete "XX"
 
 CHECKING BRANCHES
 git branch -l
