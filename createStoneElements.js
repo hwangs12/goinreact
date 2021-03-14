@@ -111,20 +111,24 @@
     };
 
     function stoneSurround(y,x) {
-        const stoneType = board[y][x]
+        if (board[y]?.[x] == undefined) {
+            return false;
+        } 
+        const stoneType = board[y][x];
         if (stoneType == NEITHER) {
             return false;
         };
+        let surroundedStone = [board[y+1]?.[x],board[y-1]?.[x],board[y]?.[x+1],board[y]?.[x-1]]
         if (stoneType == BLACK) {
-            if (board?.[y+1]?.[x] !== (BLACK && NEITHER) && board?.[y-1]?.[x] !== (BLACK && NEITHER) && board?.[y]?.[x+1] !== (BLACK && NEITHER) && board?.[y]?.[x-1] !== (BLACK && NEITHER)) {
+            if (!surroundedStone.includes(NEITHER) && !surroundedStone.includes(BLACK)) {
                 return true;
             };
         };
         if (stoneType == WHITE) {
-            if (board?.[y+1]?.[x] !== (WHITE && NEITHER) && board?.[y-1]?.[x] !== (WHITE && NEITHER) && board?.[y]?.[x+1] !== (WHITE && NEITHER) && board?.[y]?.[x-1] !== (WHITE && NEITHER)) {
+            if (!surroundedStone.includes(NEITHER) && !surroundedStone.includes(WHITE)) {
                 return true;
             };
-        };
+        };    
     };
 
     function captureSurroundedStone(i,j) {
