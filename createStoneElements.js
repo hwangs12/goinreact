@@ -96,7 +96,7 @@
                 stoneElement.style.backgroundImage = "radial-gradient(rgb(85, 85, 85),black)";
                 whoseTurn = WHITE;
                 board[i][j] = BLACK;
-                captureSurroundedStone(i,j)
+                capture (i,j)
                 refreshUI()
                 };
             if (board[i][j] == NEITHER && whoseTurn == WHITE) {
@@ -104,56 +104,57 @@
                 stoneElement.style.backgroundImage = "radial-gradient(rgb(185, 185, 185),white)";
                 whoseTurn = BLACK;
                 board[i][j] = WHITE;
-                captureSurroundedStone(i,j)
+                capture(i,j)
                 refreshUI()
             };
         });
     };
 
-    function stoneSurround(y,x) {
-        if (board[y]?.[x] == undefined) {
-            return false;
-        } 
-        const stoneType = board[y][x];
-        if (stoneType == NEITHER) {
-            return false;
-        };
-        let surroundedStone = [board[y+1]?.[x],board[y-1]?.[x],board[y]?.[x+1],board[y]?.[x-1]]
-        if (stoneType == BLACK) {
-            if (!surroundedStone.includes(NEITHER) && !surroundedStone.includes(BLACK)) {
-                return true;
-            };
-        };
-        if (stoneType == WHITE) {
-            if (!surroundedStone.includes(NEITHER) && !surroundedStone.includes(WHITE)) {
-                return true;
-            };
-        };    
-    };
+    var L = []
 
-    function captureSurroundedStone(i,j) {
-        if (stoneSurround(i+1,j)) {
-            board[i+1][j] = NEITHER; 
+    function s(i, j) {
+        if (L.some(([a, b]) => a == i && b == j)) {
+            return true
+        } else if (board[i]?.[j] == WHITE) {
+            L.push([i, j])
+        } else if (board[i]?.[j] == BLACK || board[i]?.[j] == undefined) {
+            return true;
+        } else if (board[i]?.[j] == NEITHER) {
+            return false;
         }
-        if (stoneSurround(i-1,j)) {
-            board[i-1][j] = NEITHER;         
-        }
-        if (stoneSurround(i,j+1)) {
-            board[i][j+1] = NEITHER;    
-        }
-        if (stoneSurround(i,j-1)) {
-            board[i][j-1] = NEITHER;   
+        if (s(i+1, j) && s(i-1, j) && s(i, j+1) && s(i, j-1)) {
+            return true;
+        } else {
+            return false;
         }
     }
 
-    for (let i = 0; i < 19; i++){
+    function capture(i, j) {
+        console.log(L)
+        if (s(i+1, j)) {
+            L.forEach(index => board[index[0]][index[1]] = 0);
+        }
+        L = []
+        if (s(i-1, j)) {
+            L.forEach(index => board[index[0]][index[1]] = 0);
+        }
+        L = []
+        if (s(i, j+1)) {
+            L.forEach(index => board[index[0]][index[1]] = 0);
+        }
+        L = []
+        if (s(i, j-1)) {
+            L.forEach(index => board[index[0]][index[1]] = 0);
+        } 
+        L = []
+    }
+
+    for (let i = 0; i < 19; i++) {
         for (let j = 0; j < 19; j++) {
             click(i,j)
             mouseOver(i,j)
             mouseOut(i,j)
         };
-    };
-
-
+    };    
 
 })();
